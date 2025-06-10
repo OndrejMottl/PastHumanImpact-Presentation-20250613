@@ -40,16 +40,16 @@ $heading4Size: 1em;
 $content-max-width: 900px;
 
 // Mermaid configuration
-$mermaid-bg-color: $green !important;
-$mermaid-edge-color: $red !important;
+$mermaid-bg-color: $white !important;
+$mermaid-edge-color: $black !important;
 $mermaid-node-fg-color: $body-color !important;
-$mermaid-fg-color: $gold !important;
-$mermaid-fg-color--lighter: lighten($gold, 10%) !important;
-$mermaid-fg-color--lightest: lighten($gold, 20%) !important;
+$mermaid-fg-color: $grey !important;
+$mermaid-fg-color--lighter: lighten($grey, 10%) !important;
+$mermaid-fg-color--lightest: lighten($grey, 20%) !important;
 $mermaid-font-family: $mainFont !important;
-$mermaid-label-bg-color: $green !important;
-$mermaid-label-fg-color: $gold !important;
-$mermaid-node-bg-color: $green !important;
+$mermaid-label-bg-color: $white !important;
+$mermaid-label-fg-color: $black !important;
+$mermaid-node-bg-color: $white !important;
 
 
 /*-- scss:rules --*/
@@ -415,6 +415,8 @@ ul {
 .reveal .blockquote {
   padding: $smallMargin;
   border-radius: 25px;
+  // set the background color as semi-transparent white
+  background-color: rgba($white, 0.8);
   border-left: 6px solid $black;
   border-top: 3px solid $black;
   border-bottom: 3px solid $black;
