@@ -42,6 +42,9 @@ library(jsonlite)
 if(!require("qrcode")) install.packages("qrcode")
 library(qrcode)
 
+if(!require("cropcircles")) install.packages("cropcircles")
+library(cropcircles)
+
 include_local_figure <- function(data_source) {
   knitr::include_graphics(
     path = here::here(
@@ -224,6 +227,283 @@ include_local_figure("AI_generated/industrialization.jpeg")
 ::: {.footer}
 Images created by Bing 
 :::
+
+# Humans on Planet Earth project
+
+<br>
+
+:::: {.columns}
+::: {.column width="75%" }
+
+[HOPE]{.text-background-indigo}: *Long-term impacts on biosphere dynamics* 
+
+-  a European Research Council Advanced Grant project 
+-  from 1 January 2018 to the end of 2023 (5.5-year)
+
+:::
+
+::: {.column width="25%" .text-right}
+
+```{r}
+#| label: hope-logo-1
+include_local_figure("Logos/hope_logo.gif")
+```
+
+:::
+::::
+
+## HOPE team
+
+```{r}
+#| label: make all crop circles
+#| echo: false
+#| results: false
+
+# John Birks
+cropcircles::crop_circle(
+  images = "https://upload.wikimedia.org/wikipedia/commons/2/27/Portrait_of_John_Birks_in_front_of_a_bookcase.jpg",
+  to = here::here(
+    "Materials",
+    "Hope_team",
+    "john_birks.jpg"
+  )
+  )
+
+# John-Arvid Grytnes
+cropcircles::crop_circle(
+  images = "https://mountainsinmotion.w.uib.no/files/2022/04/Grytnes_cropped100-300x300.png",
+  to = here::here(
+    "Materials",
+    "Hope_team",
+    "john_arvid_grytnes.jpg"
+  )
+)
+
+# Hilary Birks
+cropcircles::crop_circle(
+  images = "https://rse.org.uk/wp-content/uploads/2024/06/Hilary_Birks_0f03d69ebbc53e1b2d33545c0c5645f1-600x600.jpg",
+  to = here::here(
+    "Materials",
+    "Hope_team",
+    "hilary_birks.jpg"
+  )
+)
+
+# Alistair Seddon
+cropcircles::crop_circle(
+  images = "https://bjerknessenteret-staging.ams3.digitaloceanspaces.com/people/picture-933-1473843470.gif",
+  to = here::here(
+    "Materials",
+    "Hope_team",
+    "alistair_seddon.jpg"
+  )
+)
+
+# Suzette Flantua
+cropcircles::crop_circle(
+  images = "https://sflantua.github.io/profile_flantua.jpg",
+  to = here::here(
+    "Materials",
+    "Hope_team",
+    "suzette_flantua.jpg"
+  )
+)
+
+# Kuber Bhata
+cropcircles::crop_circle(
+  images = "https://0.academia-photos.com/6921283/9757041/10957082/s200_kuber.bhatta.jpg",
+  to = here::here(
+    "Materials",
+    "Hope_team",
+    "kuber_bhata.jpg"
+  )
+)
+
+# Ondřej Mottl
+cropcircles::crop_circle(
+  images = here::here(
+    "Materials",
+    "About",
+    "ondrej_mottl.jpg"
+  ),
+  to = here::here(
+    "Materials",
+    "Hope_team",
+    "ondrej_mottl.jpg"
+  )
+)
+
+# Vivian Felde
+cropcircles::crop_circle(
+  images = "https://bjerknessenteret-staging.ams3.digitaloceanspaces.com/people/Felde_web.gif",
+  to = here::here(
+    "Materials",
+    "Hope_team",
+    "vivian_felde.jpg"
+  )
+)
+```
+
+:::: {.columns .text-center .text-smaller}
+
+::: {.column width="25%"}
+
+```{r}
+#| label: john
+include_local_figure("Hope_team/john_birks.jpg")
+```
+
+John Birks
+
+```{r}
+#| label: Suzette
+include_local_figure("Hope_team/suzette_flantua.jpg")
+```
+
+Suzette Flantua
+
+:::
+
+::: {.column width="25%"}
+
+```{r}
+#| label: john arvid 
+include_local_figure("Hope_team/john_arvid_grytnes.jpg")
+```
+
+John-Arvid Grytnes
+
+
+```{r}
+#| label: kuber
+include_local_figure("Hope_team/kuber_bhata.jpg")
+```
+
+Kuber Bhata
+
+:::
+
+::: {.column width="25%"}
+
+```{r}
+#| label: hilary 
+include_local_figure("Hope_team/hilary_birks.jpg")
+```
+
+Hilary Birks
+
+```{r}
+#| label: ondrej
+include_local_figure("Hope_team/ondrej_mottl.jpg")
+```
+
+Ondřej Mottl
+
+:::
+
+::: {.column width="25%"}
+```{r}
+#| label: alistair
+include_local_figure("Hope_team/alistair_seddon.jpg")
+```
+
+Alistair Seddon
+
+```{r}
+#| label: vivian
+include_local_figure("Hope_team/vivian_felde.jpg")
+```
+
+Vivian Felde
+
+:::
+
+::::
+
+## HOPE papers (some) {.text-smaller}
+
+<br>
+
+:::: {.columns }
+::: {.column width="80%"}
+_[Mottl, O.]{.text-background-black .bold} & Flantua, S.G.A._, Bhatta K.B., Felde, V.A., Giesecke, T., Goring, S., Grimm, E.C., Haberle, S., Hooghiemstra H., Ivory, S., Kuneš, P., Wolters, S., Seddon A.W.R, Williams J.W. (2021), [Global acceleration in rates of vegetation change over the past 18,000 years]{.text-background-indigo .italic}. **Science** 372: 860-864.
+:::
+
+::: {.column width="20%"}
+```{r}
+#| label: qr_paper1
+plot(
+qrcode::qr_code(
+  x = "https://doi.org/10.1126/science.abg1685"
+))
+```
+:::
+::::
+
+:::: {.columns }
+::: {.column width="80%"}
+[Mottl, O.]{.text-background-black .bold .italic}, Grytnes, J., Seddon, A.W.R, Steinbauer, M.J., Bhatta, K.P., Felde, V.A., Flantua, S.G.A, Birks H.J.B (2021), [Rate-of-change analysis in paleoecology revisited: A new approach]{.text-background-indigo .italic}. **Review of Palaeobotany and Palynology** 293.
+:::
+
+::: {.column width="20%"}
+```{r}
+#| label: qr_paper2
+plot(
+qrcode::qr_code(
+  x = "https://doi.org/10.1016/j.revpalbo.2021.104483"
+))
+```
+:::
+::::
+
+:::: {.columns }
+::: {.column width="80%"}
+_Flantua S.G. & [Mottl, O.]{.text-background-black .bold} & Felde, V.A. & Bhatta, K.P._, Birks, H.H., Grytnes, J., Seddon, A.W.R., Birks, H.J.B. (2023), [A guide to the processing and standardisation of global palaeoecological data for large-scale syntheses using fossil pollen]{.text-background-indigo .italic}. **Global Ecology and Biogeography** 32: 1377-1394.
+:::
+
+::: {.column width="20%"}
+```{r}
+#| label: qr_paper3
+plot(
+qrcode::qr_code(
+  x = "https://doi.org/10.1111/geb.13693"
+))
+```
+:::
+::::
+
+:::: {.columns }
+::: {.column width="80%"}
+_Bhatta, K.P._, [Mottl O.]{.text-background-black .bold}, Felde V.A., Grytnes J., Reitalu T., Birks H.H., Birks,  H.J.B., Vetaas O.R. (2024), [Latitudinal gradients in the phylogenetic assembly of angiosperms in Asia during the Holocene]{.text-background-indigo .italic}. **Scientific Reports** 14.1: 17940.
+:::
+
+::: {.column width="20%"}
+```{r}
+#| label: qr_paper4
+plot(
+qrcode::qr_code(
+  x = "https://doi.org/10.1038/s41598-024-67650-1"
+))
+```
+:::
+::::
+
+:::: {.columns }
+::: {.column width="80%"}
+_Bhatta, K.P._, [Mottl, O.]{.text-background-black .bold}, Felde, V.A., Flantua S.G., Birks, H.H., Cao, X., Chen, F., Grytnes, J., Seddon, A.W. R., Birks, H.J.B. (2023), [Exploring spatio-temporal patterns of palynological changes in Asia during the Holocene]{.text-background-indigo .italic}. **Frontiers in Ecology and Evolution** 11: 1115784.
+:::
+
+::: {.column width="20%"}
+```{r}
+#| label: qr_paper5
+plot(
+  qrcode::qr_code(
+    x = "https://doi.org/10.5194/cp-20-2473-2024"
+  )
+)
+```
+:::
+::::
 
 ## Human vs Climate {background-image="Materials/AI_generated/human_vs_climate.jpeg" background-opacity="0.50"}
 
@@ -448,6 +728,290 @@ cat(mermaid_fossil_pollen)
 ```
 
 # [Fossil pollen]{.r-fit-text} {.text-center .text-color-white .bg-indigo .text-margin-top} 
+
+
+## Palaeoecology
+
+<br>
+
+:::: {.columns}
+
+::: {.column width = "50%"}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+"[Fossil pollen]{.text-background-indigo } as a window to the past [vegetation]{.text-background-wisteria} patterns"
+:::
+
+::: {.column width = "50%"}
+
+```{r}
+#| label: palaeoecology
+include_local_figure("AI_generated/fossilpollen.jpeg")
+```
+:::
+
+::::
+
+::: {.footer}
+Image created by Bing 
+:::
+
+## Fossil pollen dataset [(record)]{.text-color-grey}
+
+<br>
+
+```{r}
+#| label: fp_scheme 1
+#| out.height: 100%
+#| out.width: NULL
+include_local_figure("Visualisation-fossilpollen_extraction/scheme_1.png")
+```
+
+::: {.footer}
+Artwork by Milan Teunissen van Manen (@MilanTvM).
+:::
+
+## Fossil pollen dataset [(record)]{.text-color-grey}
+
+<br>
+
+```{r}
+#| label: fp_scheme 2
+#| out.height: 100%
+#| out.width: NULL
+include_local_figure("Visualisation-fossilpollen_extraction/scheme_2.png")
+```
+
+::: {.footer}
+Artwork by Milan Teunissen van Manen (@MilanTvM).
+:::
+
+## Fossil pollen dataset [(record)]{.text-color-grey}
+
+<br>
+
+```{r}
+#| label: fp_scheme 3
+#| out.height: 100%
+#| out.width: NULL
+include_local_figure("Visualisation-fossilpollen_extraction/scheme_3.png")
+```
+
+::: {.footer}
+Artwork by Milan Teunissen van Manen (@MilanTvM).
+:::
+
+## Fossil pollen dataset [(record)]{.text-color-grey}
+
+<br>
+
+```{r}
+#| label: fp_scheme full
+#| out.height: 100%
+#| out.width: NULL
+include_local_figure("Visualisation-fossilpollen_extraction/scheme_full.png")
+```
+
+::: {.footer}
+Artwork by Milan Teunissen van Manen (@MilanTvM).
+:::
+
+
+## {background-image="Materials/R_generated/Neotoma_spatial_data_full-2025-03-13.png" background-size="1500px" background-repeat="no-repeat" background-opacity="0.65"}
+
+<br>
+<br>
+<br>
+
+:::: {.columns}
+
+::: {.column width = "20%"}
+:::
+
+::: {.column width = "60%"}
+
+::: {.blockquote .text-center .bg-white}
+
+::: {.text-bold .r-fit-text .text-color-indigo}
+\>6500
+:::
+
+fossil pollen timeseries (records)
+
+:::
+
+:::
+
+::::
+
+<br>
+
+:::: {.blockquote .text-center .fragment  .bg-white} 
+To uncover [precise insights]{.text-background-indigo} from paleo-data, we need a [bias-reducing tool]{.text-background-blue} for seamless [data compilation]{.text-background-wisteria}
+::::
+
+
+::: {.footer}
+Fossil pollen datasets accessed from Neotoma on 2025-03-13
+:::
+
+## Palaeoecological dataset compilation
+
+<br>
+
+:::: {.columns}
+
+::: {.column width = "70%"}
+
+```{r}
+#| label: compilation_1
+include_local_figure("Visualisation-compilation/compilation_1.png")
+```
+:::
+
+::: {.column width = "30%"}
+:::
+
+::::
+
+## Palaeoecological dataset compilation
+
+<br>
+
+:::: {.columns}
+
+::: {.column width = "70%"}
+
+```{r}
+#| label: compilation_2
+include_local_figure("Visualisation-compilation/compilation_2.png")
+```
+:::
+
+::: {.column width = "30%"}
+:::
+
+::::
+
+## Palaeoecological dataset compilation
+
+<br>
+
+:::: {.columns}
+
+::: {.column width = "70%"}
+
+```{r}
+#| label: compilation_3
+include_local_figure("Visualisation-compilation/compilation_3.png")
+```
+:::
+
+::: {.column width = "30%"}
+:::
+
+::::
+
+## Palaeoecological dataset compilation
+
+<br>
+
+:::: {.columns}
+
+::: {.column width = "70%"}
+
+```{r}
+#| label: compilation_4
+include_local_figure("Visualisation-compilation/compilation_4.png")
+```
+:::
+
+::: {.column width = "30%"}
+:::
+
+::::
+
+## Palaeoecological dataset compilation
+
+<br>
+
+:::: {.columns}
+
+::: {.column width = "70%"}
+
+```{r}
+#| label: compilation_5
+include_local_figure("Visualisation-compilation/compilation_5.png")
+```
+:::
+
+::: {.column width = "30%"}
+:::
+
+::::
+
+
+## Palaeoecological dataset compilation
+
+<br>
+
+:::: {.columns}
+
+::: {.column width = "70%"}
+
+```{r}
+#| label: compilation_full
+include_local_figure("Visualisation-compilation/compilation_full.png")
+```
+:::
+
+::: {.column width = "30%" .incremental}
+
+- Macro-scale data analysis
+- Project specific
+- Data quality control and reproducibility
+
+:::
+
+::::
+
+## FOSSILPOL
+
+:::: {.columns}
+
+::: {.column width = "50%"}
+```{r}
+#| label: fossilpol_logo_2
+include_local_figure("Logos/FOSSILPOL_logo_600ppi.png")
+```
+:::
+
+::: {.column width = "50%" .center-vertical .text-larger .text-center}
+The workflow to process global [palaeoecological data]{.text-background-indigo} of fossil pollen for [vegetation]{.text-background-blue}-based [macroecological]{.text-background-wisteria} [synthesis]{.text-background-red}
+:::
+
+::::
+
+## The workflow
+
+<br>
+
+```{r}
+#| label: workflow full
+#| out.height: 100%
+#| out.width: NULL
+include_local_figure("Visualisation-workflow/workflow_full.png")
+```
+
+::: {.footer}
+Artwork by Milan Teunissen van Manen (@MilanTvM).
+:::
+
 
 ## 🙋Hi! I am Ondřej Mottl
 
