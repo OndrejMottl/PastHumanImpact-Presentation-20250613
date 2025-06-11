@@ -228,6 +228,44 @@ include_local_figure("AI_generated/industrialization.jpeg")
 Images created by Bing 
 :::
 
+## 🙋Hi! I am Ondřej Mottl
+
+<br>
+
+::: {.text-center}
+Assistant Professor at [Charles University](https://cuni.cz/UK-1.html)
+
+Head of 🧑‍💻[Laboratory of Quantitative Ecology](https://ondrejmottl.github.io/lab/about_the_lab.html)
+
+:::
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="55%"}
+<br>
+
+* 📧 Ondrej.mottl(at)gmail.com
+* 🦋 [ondrejmottl.bsky.social](https://bsky.app/profile/ondrejmottl.bsky.social)
+* 🐱 [Github OndrejMottl](https://github.com/OndrejMottl)
+* 🆔 [ORCID 0000-0002-9796-5081](https://orcid.org/0000-0002-9796-5081)
+* 🌐 [bit.ly/ondrej_mottl](https://bit.ly/ondrej_mottl)
+:::
+
+::: {.column width="45%"}
+```{r}
+#| label: head photo
+include_local_figure("About/head_photo.png")
+```
+:::
+
+::::
+
+::: {.footer}
+photo by Vladimír Šigut (CUNI)
+:::
+
 # Humans on Planet Earth project
 
 <br>
@@ -804,6 +842,89 @@ paste0(
   "```\n"
 )
 
+mermaid_climate_chelsea <- 
+paste0(
+  "```{mermaid}\n",
+  "flowchart LR\n",
+  '    climate(["Past Climate"]) ==> H1(["Hypothesis Testing"])\n',
+  '    HI(["Human impact"]) ==> H1\n',
+  '    PAP(["Ecosystem Properties"]) ==> H1\n',
+  '    vegetation(["Past Vegetation"]) --> PAP\n',
+  '    fossil(["Fossil pollen"]) --> vegetation\n',
+  '    SPD(["Human presence"]) --> HI\n',
+  '    RC(["Human Artefacts"]) --> SPD\n',
+  '    chelsea(["Climate models"]) --> climate\n',
+  '     fossil:::grey\n',
+  '     PAP:::grey\n',
+  '     vegetation:::grey\n',
+  '     H1:::grey\n',
+  '     HI:::grey\n',
+  '     SPD:::grey\n',
+  '     RC:::grey\n',
+  '     climate:::climate\n',
+  '     chelsea:::climate\n',
+  paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
+  paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
+  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, ";\n"),
+  "```\n"
+)
+
+mermaid_climate_chelsea_simple <- 
+paste0(
+  "```{mermaid}\n",
+  "flowchart LR\n",
+  '    climate(["Past Climate"]) ==> H1(["Hypothesis Testing"])\n',
+  '    HI(["Human impact"]) ==> H1\n',
+  '    PAP(["Ecosystem Properties"]) ==> H1\n',
+  '    vegetation(["Past Vegetation"]) --> PAP\n',
+  '    fossil(["Fossil pollen"]) --> vegetation\n',
+  '    SPD(["Human presence"]) --> HI\n',
+  '    RC(["Human Artefacts"]) --> SPD\n',
+  '    chelsea(["Climate models"]) --> climate\n',
+  '     fossil:::normal\n',
+  '     PAP:::normal\n',
+  '     vegetation:::normal\n',
+  '     H1:::normal\n',
+  '     HI:::normal\n',
+  '     SPD:::human\n',
+  '     RC:::human\n',
+  '     climate:::climate\n',
+  '     chelsea:::climate\n',
+  paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
+  paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
+  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, ";\n"),
+  "```\n"
+)
+
+mermaid_climate_H1_highlight <- 
+paste0(
+  "```{mermaid}\n",
+  "flowchart LR\n",
+  '    climate(["Past Climate"]) ==> H1(["Hypothesis Testing"])\n',
+  '    HI(["Human impact"]) ==> H1\n',
+  '    PAP(["Ecosystem Properties"]) ==> H1\n',
+  '    vegetation(["Past Vegetation"]) --> PAP\n',
+  '    fossil(["Fossil pollen"]) --> vegetation\n',
+  '    SPD(["Human presence"]) --> HI\n',
+  '    RC(["Human Artefacts"]) --> SPD\n',
+  '    chelsea(["Climate models"]) -.-> climate\n',
+  '     fossil:::grey\n',
+  '     PAP:::grey\n',
+  '     vegetation:::grey\n',
+  '     H1:::normal\n',
+  '     HI:::grey\n',
+  '     SPD:::grey\n',
+  '     RC:::grey\n',
+  '     climate:::grey\n',
+  '     chelsea:::grey\n',
+  paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
+  paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
+  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, ";\n"),
+  "```\n"
+)
 
 
 mermaid_human_events <-
@@ -826,12 +947,13 @@ paste0(
   '     HI:::human\n',
   '     SPD:::human\n',
   '     RC:::human\n',
-  '     events:::grey\n',
+  '     events:::events\n',
   '     climate:::climate\n',
   paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
   paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
   paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
   paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, ";\n"),
+  paste0("    classDef events fill:", colors$orange, ", color:", colors$black, ";\n"),
   "```\n"
 )
 
@@ -1637,7 +1759,7 @@ include_local_figure("Preprint/Icons/icon_artefatcs.png")
 ::: {.column width="10%"}
 :::
 
-::: {.column width="60%" .textcenter}
+::: {.column width="60%" .text-center}
 
 ```{r}
 #| label: human-map-2
@@ -1729,55 +1851,516 @@ cat(mermaid_climate_advanced_highlight)
 cat(mermaid_climate_advanced_highlight)
 ```
 
-
-## 🙋Hi! I am Ondřej Mottl
-
-<br>
-
-::: {.text-center}
-Assistant Professor at [Charles University](https://cuni.cz/UK-1.html)
-
-Head of 🧑‍💻[Laboratory of Quantitative Ecology](https://ondrejmottl.github.io/lab/about_the_lab.html)
-
-:::
+## Past climate {.text-center}
 
 <br>
+<br>
+
+```{r}
+#| label: mermaid_climate_chelsea
+#| echo: false
+#| results: asis
+cat(mermaid_climate_chelsea)
+```
+
+
+## Past climate
 
 :::: {.columns}
 
-::: {.column width="55%"}
+::: {.column width="20%"}
+
+<br>
 <br>
 
-* 📧 Ondrej.mottl(at)gmail.com
-* 🦋 [ondrejmottl.bsky.social](https://bsky.app/profile/ondrejmottl.bsky.social)
-* 🐱 [Github OndrejMottl](https://github.com/OndrejMottl)
-* 🆔 [ORCID 0000-0002-9796-5081](https://orcid.org/0000-0002-9796-5081)
-* 🌐 [bit.ly/ondrej_mottl](https://bit.ly/ondrej_mottl)
+```{r}
+#| label: climate-icon-1
+include_local_figure("Preprint/Icons/icon_climate.png")
+```
 :::
 
-::: {.column width="45%"}
+::: {.column width="80%" .fragment .text-center}
 ```{r}
-#| label: head photo
-include_local_figure("About/head_photo.png")
+#| label: climate-1
+include_local_figure("R_generated/climate_line.png")
 ```
+
+Capturing variation in both temperature and precipitation
 :::
 
 ::::
 
-::: {.footer}
-photo by Vladimír Šigut (CUNI)
+## Back to the overview {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_climate_H1_highlight
+#| echo: false
+#| results: asis
+cat(mermaid_climate_H1_highlight)
+```
+
+# [Hypothesis Testing]{.r-fit-text} {.text-center .text-color-white .bg-indigo .text-margin-top}
+
+## Hypothesis testing 
+
+<br>
+<br>
+<br>
+
+::: {.fragment}
+Can [human]{.text-background-gold}/[climate]{.text-background-green} better explain the ...
+:::
+::: {.incremental}
+
+- [spatial]{.text-background-indigo} dynamics of past ecosystem properties?
+- [temporal]{.text-background-wisteria} dynamics of past ecosystem properties?
+- changes in [interrelationships]{.text-background-blue} of past ecosystem properties?
+
 :::
 
-<!--OUTRO-->
+## Can [human]{.text-background-gold}/[climate]{.text-background-green} better explain the [spatial]{.text-background-indigo} dynamics of past ecosystem properties?
 
-# [References]{.bold .r-fit-text} {.text-center}
+```{r}
+#| label: combined-line-1
+include_local_figure("R_generated/example_combined.png")
+```
 
+::: {.footer}
+example record
+:::
+
+## Predictor importance - example record
+:::: {.columns}
+
+::: {.column width="50%" .incremental}
+
+- To estimate relative importance of [human]{.text-background-gold}/[climate]{.text-background-green} for variability in past ecosystem properties
+- [Redundancy analysis]{.text-background-blue} (RDA with standardised response variables) 
+- hierarchical variation partitioning ([HVARPART]{.text-background-indigo}) 
+   + adjusted r2
+   + [predictor importance ratio]{.text-background-black} = selected predictor importance / (total predictor importance) 
+:::
+
+::: {.column width="50%" .fragment}
+
+<br>
+<br>
+<br>
+
+```{r}
+#| label: printscreen-hvarpar
+include_local_figure("Printscreens/hvarpar_paper.png")
+```
+
+```{r}
+#| label: qr_hvarpart
+plot(
+  qrcode::qr_code(
+    x = "https://doi.org/10.1111/2041-210X.13800"
+  )
+)
+```
+
+:::
+
+::::
+
+## Predictor importance - example record
+
+```{r}
+#| label: predictor-importance-1
+include_local_figure("R_generated/example_with_importance.png")
+```
+
+
+## Scale up {auto-animate="true"}
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: summary-map-1
+include_local_figure("R_generated/map_example_record_bare.png")
+```
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="30%"}
+
+```{r}
+#| label: summary-values-1
+include_local_figure("R_generated/summary_example_record.png")
+```
+
+:::
+
+::::
+
+## Scale up {auto-animate="true"}
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: summary-map-2
+include_local_figure("R_generated/pollen_map_europe_temperate.png")
+```
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="30%"}
+
+```{r}
+#| label: summary-values-2
+include_local_figure("R_generated/summary_eu_temperate.png")
+```
+
+:::
+
+::::
+
+## Scale up {auto-animate="true"}
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: summary-map-3
+include_local_figure("R_generated/pollen_map_europe_temperate.png")
+```
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="30%"}
+
+```{r}
+#| label: summary-values-3
+include_local_figure("R_generated/summary_eu_temperate_quantile.png")
+```
+
+:::
+
+::::
+
+## Scale up {auto-animate="true"}
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: summary-map-4
+include_local_figure("R_generated/pollen_map_europe.png")
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: summary-values-4
+include_local_figure("R_generated/summary_eu_quantile.png")
+```
+
+:::
+
+::::
+
+## Scale up {auto-animate="true"}
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: summary-map-5
+include_local_figure("R_generated/pollen_map_europe.png")
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: summary-values-5
+include_local_figure("R_generated/summary_eu_with_density.png")
+```
+
+:::
+
+::::
+
+## Scale up {auto-animate="true"}
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: summary-values-6
+include_local_figure("R_generated/summary_eu_with_density.png")
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: summary-values-7
+include_local_figure("R_generated/summary_eu_with_density_climate.png")
+```
+
+:::
+
+::::
+
+## Global Spatial result
+
+```{r}
+#| label: summary-world
+include_local_figure("Preprint/Figure2_h1_spatial_manual_edit.png")
+```
+
+## Can [human]{.text-background-gold}/[climate]{.text-background-green} better explain the [temporal]{.text-background-wisteria} dynamics of past ecosystem properties?
+
+<br>
+
+::: {.fragment}
+We use radiocarbon dates (RC) of artefacts as a proxy for [human presence]{.text-background-gold}
+
+- they do not cover ~ last 3000 years BP
+:::
+
+::: {.blockquote .text-center .bg-white .fragment}
+What to do now?
+:::
+
+## Back to the overview {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_climate_chelsa_simple
+#| echo: false
+#| results: asis
+cat(mermaid_climate_chelsea_simple)
+```
+
+## Events of human impact  {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_human_events
+#| echo: false
+#| results: asis
+cat(mermaid_human_events)
+```
+
+## Events of human impact
+
+<br>
+
+::: {.incremental}
+- Expert based detection of [human events]{.text-background-indigo} from pollen diagrams
+- each continent/region have a different set of events
+- [Events]{.text-background-indigo} are used as [supplementary]{.text-background-wisteria} analyses in the temporal effect of [human impact]{.text-background-gold}
+:::
+
+## Events of human impact - general trends
+
+```{r}
+#| label: events_overview
+include_local_figure("Preprint/Extended_data_figure_9.png")
+```
+
+## Temporal analyses - methods
+
+<br>
+
+::: {.incremental}
+- for each continent, make a slice for each 500 years
+- calculate the [predictor importance]{.text-background-indigo} for each slice
+- use (separately) both [human events]{.text-background-black} and [human presence]{.text-background-gold} (SPD) as a predictor
+- use [climate]{.text-background-green} for all analyses
+:::
+
+## Temporal analyses - results
+
+```{r}
+#| label: temporal_analyses
+include_local_figure("Preprint/Figure3_h1_temporal_manual_edit.png")
+```
+
+## Can [human]{.text-background-gold}/[climate]{.text-background-green} better explain the changes in [interrelationships]{.text-background-blue} of past ecosystem properties?
+
+<br>
+
+### What if ...
+
+<br>
+
+::: {.incremental}
+- [human]{.text-background-gold} have not altered the [Ecosystem Properties]{.text-background-indigo} themselves?
+- but rather [interrelationships]{.text-background-wisteria} (correlation structures) of the [Ecosystem Properties]{.text-background-indigo}?
+:::
+
+## Interrelationships of Ecosystem Properties - methods
+
+<br>
+
+::: {.incremental}
+- for each 500 yr time slice within each Climate zone in each continent ...
+- make [principal component analysis]{.text-background-indigo} (PCA with standardisation of the metrics)
+- between time slices, make [Procrustes sum-of-squares]{.text-background-wisteria} analysis to compare the changes in the interrelationships
+- make symmetric scaling (m2) to create distance matrices
+- [HVARPART]{.text-background-blue} using m2-distances between time slices
+:::
+
+## Interrelationships of Ecosystem Properties - results
+
+```{r}
+#| label: interrelationships
+include_local_figure("Preprint/Figure4_h2_manual_edit.png")
+```
+
+# [Summary]{.r-fit-text} {.bg-indigo .text-center .text-color-white .text-margin-top}
+
+## Main findings {.bg-black .text-color-white auto-animate="true"}
+
+<br>
+
+::: {.text-center}
+We have summaried over [75,000 vegetation assemblages]{.text-background-indigo} in over 1260 fossil pollen records. Decribe each ecosystem by [9 ecosystem properties]{.text-background-wisteria}. We have also included over [150,000 radiocarbon dates]{.text-background-gold} derived from archaeological data and [4 past climate variables]{.text-background-green}.
+:::
+
+## Main findings {.bg-black .text-color-white auto-animate="true"}
+
+::: {.text-center .text-color-gray}
+We have summaried over 75,000 vegetation assemblages in over 1260 fossil pollen records. Decribe each ecosystem by 9 ecosystem properties. We have also included over 150,000 radiocarbon dates derived from archaeological data and 4 past climate variables.
+:::
+
+<br>
+
+::: {.text-center}
+This is the first study to [quantitatively]{.text-background-indigo} estimate the relative importance of [human]{.text-background-gold} and [climate]{.text-background-green} effects on vegetation properties globaly and during the early-to-mid [Holocene]{.text-background-wisteria}.
+:::
+
+
+## Main findings {.bg-black .text-color-white auto-animate="true"}
+
+::: {.text-center .text-color-gray}
+We have summaried over 75,000 vegetation assemblages in over 1260 fossil pollen records. Decribe each ecosystem by 9 ecosystem properties. We have also included over 150,000 radiocarbon dates derived from archaeological data and 4 past climate variables.
+:::
+
+::: {.text-center .text-color-gray} 
+This is the first study to quantitatively estimate the relative importance of human and climate effects on vegetation properties globaly and during the early-to-mid Holocene.
+:::
+
+<br>
+
+::: {.text-center}
+[Localy]{.text-background-indigo}, [humans]{.text-background-gold .bold} had [severe impact]{.text-color-highlight-tertiary} on vegetation change during the early-to-mid [Holocene]{.text-background-wisteria}.
+:::
+
+## Main findings {.bg-black .text-color-white auto-animate="true"}
+
+::: {.text-center .text-color-gray}
+We have summaried over 75,000 vegetation assemblages in over 1260 fossil pollen records. Decribe each ecosystem by 9 ecosystem properties. We have also included over 150,000 radiocarbon dates derived from archaeological data and 4 past climate variables.
+:::
+
+::: {.text-center .text-color-gray} 
+This is the first study to quantitatively estimate the relative importance of human and climate effects on vegetation properties globaly and during the early-to-mid Holocene.
+:::
+
+::: {.text-center .text-color-gray}
+Localy, humans had severe impact on vegetation change during the early-to-mid Holocene.
+:::
+
+<br>
+
+::: {.text-center}
+[At a larger scale]{.text-background-indigo}, [climate]{.text-background-green .bold} was the [main driver]{.text-color-highlight-tertiary} of vegetation change during the early-to-mid [Holocene]{.text-background-wisteria}.
+:::
+
+## Preprint available
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+```{r}
+#| label: preprint
+include_local_figure("Preprint/preprint_header.png")
+```
+
+:::
+
+::: {.column width="30%"}
+
+```{r}
+#| label: preprint-qr
+include_local_figure("QR_codes/qr_preprint.png")
+```
+
+:::
+
+::::
+
+::: {.text-center .fragment}
+[Vivian A. Felde & [Ondřej Mottl]{.text-background-black} & Suzette G. A. Flantua]{.underline}, Kuber P. Bhatta, Hilary H. Birks, John-Arvid Grytnes, Henry Hooghiemstra, Sandra Nogué, Triin Reitalu, Alistair W. R. Seddon, Manuel J. Steinbauer, Cajo J. F. ter Braak, Thomas Giesecke, Simon J. Goring, Simon G. Haberle, Annika V. Herbert, Petr Šmilauer, Willy Tinner, John W. Williams, Darcy Bird1, Jacob Freeman, Eugenia Gayo, Julie A. Hoggarth, Claudio Latorre, Lux Miranda, Erick Robinson, Xianyong Cao, Fahu Chen, H. John B. Birks
+:::
+
+## [This presentation]{.r-fit-text} {.bg-indigo .text-color-white .text-center}
+
+::: {.text-larger}
 [🖥️ Slides](https://ondrejmottl.github.io/PastHumanImpact-Presentation-20250613/)
 
 [😸 Code on GitHub](https://github.com/OndrejMottl/PastHumanImpact-Presentation-20250613)
 
-Author: [Ondrej Mottl](https://ondrejmottl.github.io/)
+![](https://img.shields.io/badge/License-MIT-yellow.svg)
 
+Author: [Ondrej Mottl](https://ondrejmottl.github.io/)
+:::
+
+:::: {.columns}
+
+::: {.column width="33%"}
+:::
+
+::: {.column width="33%"}
+
+```{r}
+#| label: qr_github
+plot(
+  qrcode::qr_code(
+    x = "https://github.com/OndrejMottl/PastHumanImpact-Presentation-20250613"
+))
+```
+:::
+
+::: {.column width="33%"}
+:::
+
+::::
 
 ## {.bg-indigo}
 
@@ -1860,4 +2443,69 @@ include_local_figure("Logos/hope_logo.gif")
 ::: {.footer}
 photo by Vladimír Šigut (CUNI)
 :::
+
+# [Appendix]{.r-fit-text} {.bg-indigo .text-color-white .text-center .text-margin-top}
+
+## Conceptual workflow figure
+
+```{r}
+#| label: workflow
+include_local_figure("Preprint/Figure1.png")
+```
+
+## More examples
+
+```{r}
+#| label: more-examples
+include_local_figure("Preprint/Extended_data_figure_3_manual_edits.png")
+```
+
+## Pollen data overview
+
+```{r}
+#| label: pollen-data-overview
+include_local_figure("Preprint/Extended_data_figure_1.png")
+```
+
+## Human impact overview
+
+```{r}
+#| label: human-impact-overview
+include_local_figure("Preprint/Extended_data_figure_2.png")
+```
+
+## General patterns - SPD
+
+```{r}
+#| label: general-patterns-spd
+include_local_figure("Preprint/Extended_data_figure_4_spd.png")
+```
+
+## General patterns - MAT
+
+```{r}
+#| label: general-patterns-mat
+include_local_figure("Preprint/Extended_data_figure_5_temp_annual.png")
+```
+
+## General patterns - MTCO
+
+```{r}
+#| label: general-patterns-mtco
+include_local_figure("Preprint/Extended_data_figure_6_temp_cold.png")
+```
+
+## General patterns - MAPS
+
+```{r}
+#| label: general-patterns-maps
+include_local_figure("Preprint/Extended_data_figure_7_prec_summer.png")
+```
+
+## General patterns - MAPW
+
+```{r}
+#| label: general-patterns-mapw
+include_local_figure("Preprint/Extended_data_figure_8_prec_winter.png")
+```
 
