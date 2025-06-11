@@ -584,6 +584,50 @@ paste0(
   "```\n"
 )
 
+mermaid_fossil_pollen_highlight <-
+paste0(
+  "```{mermaid}\n",
+  "flowchart LR\n",
+  '    climate(["Past Climate"]) ==> H1(["Hypothesis Testing"])\n',
+  '    HI(["Human impact"]) ==> H1\n',
+  '    PAP(["Ecosystem Properties"]) ==> H1\n',
+  '    vegetation(["Past Vegetation"]) --> PAP\n',
+  '    fossil(["Fossil pollen"]) --> vegetation\n',
+  '     fossil:::normal\n',
+  '     PAP:::grey\n',
+  '     vegetation:::normal\n',
+  '     H1:::grey\n',
+  '     HI:::grey\n',
+  '     climate:::grey\n',
+  paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
+  paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
+  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, ";\n"),
+  "```\n"
+)
+
+mermaid_diagram_pap_highligh <-
+paste0(
+  "```{mermaid}\n",
+  "flowchart LR\n",
+  '    climate(["Past Climate"]) ==> H1(["Hypothesis Testing"])\n',
+  '    HI(["Human impact"]) ==> H1\n',
+  '    PAP(["Ecosystem Properties"]) ==> H1\n',
+  '    vegetation(["Past Vegetation"]) --> PAP\n',
+  '    fossil(["Fossil pollen"]) --> vegetation\n',
+  '     fossil:::grey\n',
+  '     PAP:::normal\n',
+  '     vegetation:::grey\n',
+  '     H1:::grey\n',
+  '     HI:::grey\n',
+  '     climate:::grey\n',
+  paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
+  paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
+  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, ";\n"),
+  "```\n"
+)
+
 mermaid_human_presence <-
 paste0(
   "```{mermaid}\n",
@@ -709,7 +753,7 @@ cat(mermaid_0)
 <br>
 
 ```{r}
-#| label: mermaid_diagram_1
+#| label: mermaid_diagram_ecosystem
 #| echo: false
 #| results: asis
 cat(mermaid_ecosystem)
@@ -721,10 +765,22 @@ cat(mermaid_ecosystem)
 <br>
 
 ```{r}
-#| label: mermaid_diagram_2
+#| label: mermaid_diagram_fossil_pollen
 #| echo: false
 #| results: asis
 cat(mermaid_fossil_pollen)
+```
+
+## Hypothesis testing {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_diagram_fossil_pollen_highlight
+#| echo: false
+#| results: asis
+cat(mermaid_fossil_pollen_highlight)
 ```
 
 # [Fossil pollen]{.r-fit-text} {.text-center .text-color-white .bg-indigo .text-margin-top} 
@@ -997,7 +1053,7 @@ The workflow to process global [palaeoecological data]{.text-background-indigo} 
 
 ::::
 
-## The workflow
+## The FOSSILPOL workflow
 
 <br>
 
@@ -1012,6 +1068,148 @@ include_local_figure("Visualisation-workflow/workflow_full.png")
 Artwork by Milan Teunissen van Manen (@MilanTvM).
 :::
 
+## Scandinavian example
+
+<br>
+<br>
+
+```{r}
+#| label: map_overview
+include_local_figure("R_generated/sc_map_all.png")
+```
+
+::: {.fragment}
+
+```{r}
+#| label: data_quality
+include_local_figure("R_generated/sc_map_increase_quality.png")
+```
+:::
+
+## The FOSSILPOL workflow
+
+:::: {.columns}
+
+::: {.column width="75%" .fragment}
+
+<br>
+
+- Handles all the steps and flags places where the [user]{.text-background-indigo} needs to specify their [choices]{.text-background-wisteria}
+:::
+
+::: {.column width="25%"}
+```{r}
+#| label: qr_fossilpol
+include_local_figure("QR_codes/qr_fossilpol.png")
+```
+:::
+
+::::
+
+:::: {.columns .fragment}
+
+::: {.column width="60%"}
+- '*A guide to the processing and standardisation of global palaeoecological data for large-scale syntheses using fossil pollen*' (GEB 2023)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="35%"}
+
+```{r}
+#| label: gep_certificate
+include_local_figure("Printscreens/GEB_certifiate.png")
+```
+:::
+
+::::
+
+:::: {.columns .fragment}
+
+::: {.column width="35%"}
+:::
+
+::: {.column width="30%"}
+```{r}
+#| label: qr_paper3_b
+plot(
+  qrcode::qr_code(
+  x = "https://doi.org/10.1111/geb.13693"
+))
+```
+:::
+
+::: {.columns width="35%"}
+:::
+
+::::
+
+## Website
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```{r}
+#| label: website_preview
+include_local_figure("Printscreens/website_preview.png")
+```
+:::
+
+::: {.column width="60%" .fragment}
+
+```{r}
+#| label: website_doc_preview
+include_local_figure("Printscreens/website_doc_preview.png")
+```
+
+[websites]{.text-background-indigo} - [bit.ly/FOSSILPOL](https://bit.ly/FOSSILPOL)
+
+:::
+
+::::
+
+# the DATA
+
+```{r}
+#| label: pollen-map-full
+include_local_figure("R_generated/pollen_map_full.png")
+```
+
+::: {.footer}
+over 1260 Fossil pollen records from the Neotoma database; over 75,000 individual assemblages
+:::
+
+## From vegetation to ecosystems {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_diagram_fossil_pollen_b
+#| echo: false
+#| results: asis
+cat(mermaid_fossil_pollen)
+```
+
+## From vegetation to ecosystems {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_diagram_pap_highligh
+#| echo: false
+#| results: asis
+cat(mermaid_diagram_pap_highligh)
+```
+
+# [Ecosystem Properties]{.r-fit-text} {.text-center .text-color-white .bg-indigo .text-margin-top} 
+
+## Ecosystem properties
 
 ## 🙋Hi! I am Ondřej Mottl
 

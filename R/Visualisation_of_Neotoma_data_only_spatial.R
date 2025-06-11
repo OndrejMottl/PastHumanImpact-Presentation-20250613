@@ -32,6 +32,10 @@ remotes::install_github(
 
 library(RFossilpol)
 
+source(
+  here::here("R/Config_file_fossilpol.R")
+)
+
 
 #----------------------------------------------------------#
 # 2. Get Neotoma data -----
