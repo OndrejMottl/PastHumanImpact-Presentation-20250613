@@ -540,7 +540,7 @@ paste0(
   '     climate:::climate\n',
   paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
   paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
-  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, "\n"),
   "```\n"
 )
 
@@ -559,7 +559,7 @@ paste0(
   '     climate:::climate\n',
   paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
   paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
-  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, "\n"),
   "```\n"
 )
 
@@ -580,7 +580,7 @@ paste0(
   '     climate:::climate\n',
   paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
   paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
-  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, "\n"),
   "```\n"
 )
 
@@ -601,8 +601,8 @@ paste0(
   '     climate:::grey\n',
   paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
   paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
-  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
-  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, ";\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, "\n"),
+  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, "\n"),
   "```\n"
 )
 
@@ -623,8 +623,30 @@ paste0(
   '     climate:::grey\n',
   paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
   paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
-  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
-  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, ";\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, "\n"),
+  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, "\n"),
+  "```\n"
+)
+
+mermaid_human_impact_highlight <- 
+paste0(
+  "```{mermaid}\n",
+  "flowchart LR\n",
+  '    climate(["Past Climate"]) ==> H1(["Hypothesis Testing"])\n',
+  '    HI(["Human impact"]) ==> H1\n',
+  '    PAP(["Ecosystem Properties"]) ==> H1\n',
+  '    vegetation(["Past Vegetation"]) --> PAP\n',
+  '    fossil(["Fossil pollen"]) --> vegetation\n',
+  '    fossil:::grey\n',
+  '    PAP:::grey\n',
+  '    vegetation:::grey\n',
+  '    H1:::grey\n',
+  '    HI:::human\n',
+  '    climate:::grey\n',
+  paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
+  paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, "\n"),
+  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, "\n"),
   "```\n"
 )
 
@@ -635,19 +657,20 @@ paste0(
   '    climate(["Past Climate"]) ==> H1(["Hypothesis Testing"])\n',
   '    HI(["Human impact"]) ==> H1\n',
   '    PAP(["Ecosystem Properties"]) ==> H1\n',
-  '    vegetation(["Past Vegetation"]) -> PAP\n',
+  '    vegetation(["Past Vegetation"]) --> PAP\n',
   '    fossil(["Fossil pollen"]) --> vegetation\n',
   '    SPD(["Human presence"]) --> HI\n',
-  '     fossil:::normal\n',
-  '     PAP:::normal\n',
-  '     vegetation:::normal\n',
-  '     H1:::normal\n',
+  '     fossil:::grey\n',
+  '     PAP:::grey\n',
+  '     vegetation:::grey\n',
+  '     H1:::grey\n',
   '     HI:::human\n',
   '     SPD:::human\n',
-  '     climate:::climate\n',
+  '     climate:::grey\n',
   paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
   paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
-  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, "\n"),
+  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, "\n"),
   "```\n"
 )
 
@@ -658,7 +681,85 @@ paste0(
   '    climate(["Past Climate"]) ==> H1(["Hypothesis Testing"])\n',
   '    HI(["Human impact"]) ==> H1\n',
   '    PAP(["Ecosystem Properties"]) ==> H1\n',
-  '    vegetation(["Past Vegetation"]) -> PAP\n',
+  '    vegetation(["Past Vegetation"]) --> PAP\n',
+  '    fossil(["Fossil pollen"]) --> vegetation\n',
+  '    SPD(["Human presence"]) --> HI\n',
+  '    RC(["Human Artefacts"]) --> SPD\n',
+  '     fossil:::grey\n',
+  '     PAP:::grey\n',
+  '     vegetation:::grey\n',
+  '     H1:::grey\n',
+  '     HI:::human\n',
+  '     SPD:::human\n',
+  '     RC:::human\n',
+  '     climate:::grey\n',
+  paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
+  paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, "\n"),
+  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, "\n"),
+  "```\n"
+)
+
+mermaid_human_artefacts_highlight <-
+paste0(
+  "```{mermaid}\n",
+  "flowchart LR\n",
+  '    climate(["Past Climate"]) ==> H1(["Hypothesis Testing"])\n',
+  '    HI(["Human impact"]) ==> H1\n',
+  '    PAP(["Ecosystem Properties"]) ==> H1\n',
+  '    vegetation(["Past Vegetation"]) --> PAP\n',
+  '    fossil(["Fossil pollen"]) --> vegetation\n',
+  '    SPD(["Human presence"]) --> HI\n',
+  '    RC(["Human Artefacts"]) --> SPD\n',
+  '     fossil:::grey\n',
+  '     PAP:::grey\n',
+  '     vegetation:::grey\n',
+  '     H1:::grey\n',
+  '     HI:::grey\n',
+  '     SPD:::grey\n',
+  '     RC:::human\n',
+  '     climate:::grey\n',
+  paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
+  paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
+  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, ";\n"),
+  "```\n"
+)
+
+mermaid_human_presence_highlight <-
+paste0(
+  "```{mermaid}\n",
+  "flowchart LR\n",
+  '    climate(["Past Climate"]) ==> H1(["Hypothesis Testing"])\n',
+  '    HI(["Human impact"]) ==> H1\n',
+  '    PAP(["Ecosystem Properties"]) ==> H1\n',
+  '    vegetation(["Past Vegetation"]) --> PAP\n',
+  '    fossil(["Fossil pollen"]) --> vegetation\n',
+  '    SPD(["Human presence"]) --> HI\n',
+  '    RC(["Human Artefacts"]) --> SPD\n',
+  '     fossil:::grey\n',
+  '     PAP:::grey\n',
+  '     vegetation:::grey\n',
+  '     H1:::grey\n',
+  '     HI:::grey\n',
+  '     SPD:::human\n',
+  '     RC:::human\n',
+  '     climate:::grey\n',
+  paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
+  paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
+  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, ";\n"),
+  "```\n"
+)
+
+mermaid_climate_advanced <-
+paste0(
+  "```{mermaid}\n",
+  "flowchart LR\n",
+  '    climate(["Past Climate"]) ==> H1(["Hypothesis Testing"])\n',
+  '    HI(["Human impact"]) ==> H1\n',
+  '    PAP(["Ecosystem Properties"]) ==> H1\n',
+  '    vegetation(["Past Vegetation"]) --> PAP\n',
   '    fossil(["Fossil pollen"]) --> vegetation\n',
   '    SPD(["Human presence"]) --> HI\n',
   '    RC(["Human Artefacts"]) --> SPD\n',
@@ -673,8 +774,37 @@ paste0(
   paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
   paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
   paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
+  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, ";\n"),
   "```\n"
 )
+
+mermaid_climate_advanced_highlight <-
+paste0(
+  "```{mermaid}\n",
+  "flowchart LR\n",
+  '    climate(["Past Climate"]) ==> H1(["Hypothesis Testing"])\n',
+  '    HI(["Human impact"]) ==> H1\n',
+  '    PAP(["Ecosystem Properties"]) ==> H1\n',
+  '    vegetation(["Past Vegetation"]) --> PAP\n',
+  '    fossil(["Fossil pollen"]) --> vegetation\n',
+  '    SPD(["Human presence"]) --> HI\n',
+  '    RC(["Human Artefacts"]) --> SPD\n',
+  '     fossil:::grey\n',
+  '     PAP:::grey\n',
+  '     vegetation:::grey\n',
+  '     H1:::grey\n',
+  '     HI:::grey\n',
+  '     SPD:::grey\n',
+  '     RC:::grey\n',
+  '     climate:::climate\n',
+  paste0("    classDef human fill:", colors$gold, ", color:", colors$black, "\n"),
+  paste0("    classDef climate fill:", colors$green, ", color:", colors$black, "\n"),
+  paste0("    classDef normal fill:", colors$white, ", color:", colors$black, ";\n"),
+  paste0("    classDef grey fill:", colors$white, ", color:", colors$grey, ";\n"),
+  "```\n"
+)
+
+
 
 mermaid_human_events <-
 paste0(
@@ -683,7 +813,7 @@ paste0(
   '    climate(["Past Climate"]) ==> H1(["Hypothesis Testing"])\n',
   '    HI(["Human impact"]) ==> H1\n',
   '    PAP(["Ecosystem Properties"]) ==> H1\n',
-  '    vegetation(["Past Vegetation"]) -> PAP\n',
+  '    vegetation(["Past Vegetation"]) --> PAP\n',
   '    fossil(["Fossil pollen"]) --> vegetation\n',
   '    SPD(["Human presence"]) --> HI\n',
   '    RC(["Human Artefacts"]) --> SPD\n',
@@ -712,7 +842,7 @@ paste0(
   '    climate(["Past Climate"]) ==> H1(["Hypothesis Testing"])\n',
   '    HI(["Human impact"]) ==> H1\n',
   '    PAP(["Ecosystem Properties"]) ==> H1\n',
-  '    vegetation(["Past Vegetation"]) -> PAP\n',
+  '    vegetation(["Past Vegetation"]) --> PAP\n',
   '    fossil(["Fossil pollen"]) --> vegetation\n',
   '    SPD(["Human presence"]) --> HI\n',
   '    RC(["Human Artefacts"]) --> SPD\n',
@@ -1172,7 +1302,7 @@ include_local_figure("Printscreens/website_doc_preview.png")
 
 ::::
 
-# the DATA
+## Our fossil pollen data
 
 ```{r}
 #| label: pollen-map-full
@@ -1210,6 +1340,395 @@ cat(mermaid_diagram_pap_highligh)
 # [Ecosystem Properties]{.r-fit-text} {.text-center .text-color-white .bg-indigo .text-margin-top} 
 
 ## Ecosystem properties
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="60%" .incremental} 
+- [Ecosystem properties]{.text-background-indigo} are used to describe the [past vegetation]{.text-background-wisteria} and its [dynamics]{.text-background-blue}
+- use various [community ecology]{.text-background-indigo} metrics to describe the current [status]{.text-background-wisteria} of each community (i.e. spatio-temporal sample)
+- Reflect the [multidimensional]{.text-background-indigo} aspects of [biodiversity]{.text-background-blue}
+:::
+
+::: {.column width="40%"}
+
+<br>
+<br>
+
+```{r}
+#| label: icon-ecosystem-1
+include_local_figure("Preprint/Icons/icon_ecosystem.png")
+```
+:::
+::::
+
+## Ecosystem properties
+
+### Variables:
+
+:::: {.columns}
+
+::: {.column width="60%" .incremental} 
+- Diversity (Hill numbers)
+- Evenness 
+- Taxonomic turnover (DCCA)
+- Rate of vegetation change (Roc)
+- Temporal density of biodiversity change (change points)
+:::
+
+::: {.column width="30%" .fragment}
+
+```{r}
+#| label: icon-RRatepol
+knitr::include_graphics("https://hope-uib-bio.github.io/R-Ratepol-package/reference/figures/RRatepol_logo.png")
+```
+
+```{r}
+#| label: icon-Ecopol
+knitr::include_graphics("https://hope-uib-bio.github.io/R-Ecopol-package/reference/figures/REcopol_logo.png")
+```
+
+
+:::
+::::
+
+## My goal {.text-center}
+
+::: {.text-size-heading3 .text-gothic}
+Empowering scientific [exploration]{.text-background-indigo} through [user-friendly tools]{.text-background-wisteria}
+:::
+
+:::: {.columns}
+
+::: {.column width="33%"}
+```{r}
+#| label: fossilpol_logo_3
+include_local_figure("Logos/FOSSILPOL_logo_600ppi.png")
+```
+
+```{r}
+#| label: qr_fossilpol_b
+plot(
+  qrcode::qr_code(
+    x = "https://bit.ly/FOSSILPOL"
+  )
+)
+```
+
+:::
+
+::: {.column width="33%"}
+```{r}
+#| label: icon-Ecopol_b
+knitr::include_graphics("https://hope-uib-bio.github.io/R-Ecopol-package/reference/figures/REcopol_logo.png")
+```
+
+```{r}
+#| label: qr_ecopol
+plot(
+  qrcode::qr_code(
+    x = "https://hope-uib-bio.github.io/R-Ecopol-package/"
+  )
+)
+```
+
+:::
+
+::: {.column width="33%"}
+```{r}
+#| label: icon-RRatepol_b
+knitr::include_graphics("https://hope-uib-bio.github.io/R-Ratepol-package/reference/figures/RRatepol_logo.png")
+```
+
+```{r}
+#| label: qr_rratepol
+plot(
+  qrcode::qr_code(
+    x = "https://bit.ly/RRatepol-website"
+  )
+)
+```
+
+:::
+
+::::
+
+## Example - world
+
+```{r}
+#| label: pollen-map-full_b
+include_local_figure("R_generated/pollen_map_full.png")
+```
+
+## Example - Europe
+
+```{r}
+#| label: pollen-map-europe
+include_local_figure("R_generated/pollen_map_europe.png")
+```
+
+::: {.footer}
+Koppen-Geiger climate zones
+:::
+
+## Example - Temperate climate zone
+
+```{r}
+#| label: pollen-map-temperate
+include_local_figure("R_generated/pollen_map_europe_temperate.png")
+```
+
+## Example - record
+
+```{r}
+#| label: pollen-map-example-record
+include_local_figure("R_generated/pollen_map_example_record.png")
+```
+
+
+## Example - record
+
+:::: {.columns}
+
+::: {.column width="20%"}
+
+<br>
+<br>
+<br>
+<br>
+
+```{r}
+#| label: icon-ecosystem-2
+include_local_figure("Preprint/Icons/icon_ecosystem.png")
+```
+:::
+
+::: {.column width="80%" .fragment .text-center} 
+```{r}
+#| label: pollen-paps-1
+include_local_figure("R_generated/pollen_paps_all.png")
+```
+
+Reflecting the multidimensional aspects of biodiversity
+:::
+
+::::
+
+## Back to the overview {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_diagram_fossil_pollen_d
+#| echo: false
+#| results: asis
+cat(mermaid_fossil_pollen)
+```
+
+## Past human impact {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_diagram_human_impact_highlight
+#| echo: false
+#| results: asis
+cat(mermaid_human_impact_highlight)
+```
+
+# [Past Human Impact]{.r-fit-text} {.text-center .text-color-white .bg-indigo .text-margin-top}
+
+## Past human impact {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_diagram_human_impact_highlight_b
+#| echo: false
+#| results: asis
+cat(mermaid_human_impact_highlight)
+```
+
+## Past human impact {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_diagram_human_presence
+#| echo: false
+#| results: asis
+cat(mermaid_human_presence)
+```
+
+
+## Past human impact {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_diagram_human_artefacts
+#| echo: false
+#| results: asis
+cat(mermaid_human_artefacts)
+```
+
+## Past human impact {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_diagram_human_artefacts_highlight
+#| echo: false
+#| results: asis
+cat(mermaid_human_artefacts_highlight)
+```
+
+## Human artefacts {auto-animate="true"}
+
+:::: {.columns}
+
+::: {.column width="20%"}
+
+<br>
+<br>
+
+```{r}
+#| label: human-artefacts-icon-1
+include_local_figure("Preprint/Icons/icon_artefatcs.png")
+```
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="60%" .fragment}
+
+```{r}
+#| label: human-map-1
+include_local_figure("R_generated/map_example_record_bare.png")
+```
+
+:::
+
+::::
+
+## Human artefacts {auto-animate="true"}
+
+:::: {.columns}
+
+::: {.column width="20%"}
+
+<br>
+<br>
+
+```{r}
+#| label: human-artefacts-icon-2
+include_local_figure("Preprint/Icons/icon_artefatcs.png")
+```
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="60%" .textcenter}
+
+```{r}
+#| label: human-map-2
+include_local_figure("R_generated/map_example_record_rc.png")
+```
+
+over 150,000 radiocarbon dates derived from archaeological data
+
+:::
+
+::::
+
+## Past human presence {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_diagram_human_presence_highlight
+#| echo: false
+#| results: asis
+cat(mermaid_human_presence_highlight)
+```
+
+## Past human presence
+
+:::: {.columns}
+
+::: {.column width="20%"}
+
+<br>
+<br>
+
+```{r}
+#| label: human-icon-3
+include_local_figure("Preprint/Icons/icon_human.png")
+```
+:::
+
+::: {.column width="80%"}
+```{r}
+#| label: human-density-1
+include_local_figure("R_generated/human_density.png")
+```
+
+:::
+
+::::
+
+::: {.footer}
+Summed Probability Distribution (SPD)
+:::
+
+# Back to the overview {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_climate_advanced
+#| echo: false
+#| results: asis
+cat(mermaid_climate_advanced)
+```
+
+# Past climate {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_climate_advanced_highlight
+#| echo: false
+#| results: asis
+cat(mermaid_climate_advanced_highlight)
+```
+
+# [Past Climate]{.r-fit-text} {.text-center .text-color-white .bg-indigo .text-margin-top}
+
+## Past climate {.text-center}
+
+<br>
+<br>
+
+```{r}
+#| label: mermaid_climate_advanced_highlight_b
+#| echo: false
+#| results: asis
+cat(mermaid_climate_advanced_highlight)
+```
+
 
 ## 🙋Hi! I am Ondřej Mottl
 
